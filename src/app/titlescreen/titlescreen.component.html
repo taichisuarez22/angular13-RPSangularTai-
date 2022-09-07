@@ -1,0 +1,20 @@
+<div>
+    <div *ngIf="toggle">
+    <h1>a Game of Drones!</h1>
+    <h2>RPS by tai</h2>
+    <button mat-raised-button color="warn" (click)="handleStart()">Start game!</button>
+    </div>
+    <div *ngIf="!toggle">
+    <form  class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Player's 1 name: </mat-label>
+            <input matInput placeholder="persona2" name="i1" [(ngModel)]="i1">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Player's 2 name: </mat-label>
+            <input matInput placeholder="persona1" name="i2" [(ngModel)]="i2">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary" [disabled]="i1 === '' || i2 === ''" (click)="handleSubmit()">Confirm names.</button>
+    </div>
+</div>
